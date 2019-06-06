@@ -1,0 +1,116 @@
+@import "../../core/variables";
+
+$example-viewer-container-marin-x: 10px!default;
+
+.example-viewer-container {
+
+  @media only screen and (max-width: $breakpoint-small - 1) {
+    width: calc(100% - #{$example-viewer-container-marin-x} * 2);
+  }
+
+  @media only screen and (min-width: $breakpoint-small) {
+    width: calc(100% - #{$example-viewer-container-marin-x} * 2);
+  }
+
+  @media only screen and (min-width: $breakpoint-medium) {
+    width: calc(100% - #{$example-viewer-container-marin-x} * 2);
+  }
+
+  @media only screen and (min-width: $breakpoint-large) {
+    width: calc(100% - #{$example-viewer-container-marin-x} * 4);
+  }
+
+  @media only screen and (min-width: $breakpoint-xlarge) {
+    width: calc(100% - #{$example-viewer-container-marin-x} * 4);
+  }
+
+  @media only screen and (min-width: $breakpoint-xxlarge) {
+    width: calc(100% - #{$example-viewer-container-marin-x} * 6);
+  }
+
+  margin: 20px;
+  .example-viewer-wrapper {
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 5px 5px rgba(0,0,0,.08), 0 0 10px rgba(0,0,0,.12);
+
+
+    .example-viewer-title-container {
+      align-content: center;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding: 8px 20px;
+      color: $nd-font-color-nav;
+      font-weight: 500;
+      background: rgba(0,0,0, .03);
+      height: 36px;
+
+      .example-viewer-title {
+        flex: 1 1 auto;
+        display: block;
+        font-family: $nd-global-font-family-1;
+      }
+
+      button {
+        outline: 0;
+        border: none;
+        cursor: pointer;
+        height: 100%;
+        background: transparent;
+        font-weight: 500;
+        font-size: 18px;
+        color: rgba(0,0,0, .54);
+        transition: all .3s ease-in-out;
+        letter-spacing: 4px;
+        transform: scaleY(1.3) rotate(0deg);
+        width: 60px;
+        &:hover {
+          transform: scaleY(1.3) rotate(-360deg);
+        }
+
+        span {
+          width: 10px;
+        }
+        span:first-child {
+          margin-right: 5px;
+        }
+
+        span:last-child {
+          margin-left: 2px;
+        }
+      }
+    }
+
+    .example-viewer-source-container {
+      width: calc(100% - 40px);
+      align-content: center;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding: 20px 20px;
+
+      iframe {
+        width: 100%;
+      }
+    }
+
+    .example-viewer-body-container {
+      width: calc(100% - 40px);
+      padding: 20px 20px;
+      color: rgba(0,0,0, .72);
+      h1,h2,h3,h4,h5,h6,p {
+        font: {
+          family: $nd-global-font-family-1;
+          weight: 600;
+        }
+      }
+
+      p {
+        font-weight: 400;
+      }
+    }
+  }
+}
